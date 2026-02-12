@@ -1,8 +1,5 @@
 # Windows 11 25H2 ETW Game Performance Analysis
 
-
-# Windows 11 25H2 ETW Game Performance Analysis
-
 ## Overview
 Windows 11 25H2 (KB5074109) 環境において、主要なゲームタイトルを対象に **ETW (Event Tracing for Windows)**、**WPR (Windows Performance Recorder)**、**WPA (Windows Performance Analyzer)** を用いた統合パフォーマンス解析を実施しました。
 
