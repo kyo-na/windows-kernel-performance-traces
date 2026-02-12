@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WindowsPerformanceRecorder Version="1.0" Author="Microsoft">
+  <Profiles>
+    <SystemCollector Id="SC_Mega" Name="NT Kernel Logger">
+      <BufferSize Value="1024"/> <Buffers Value="128"/>
+    </SystemCollector>
+    <EventCollector Id="EC_Mega" Name="Event Collector">
+      <BufferSize Value="1024"/> <Buffers Value="128"/>
+    </EventCollector>
+
+    <SystemProvider Id="SP_Kernel_All">
+      <Keywords>
+        <Keyword Value="ProcessThread"/>
+        <Keyword Value="Loader"/>
+        <Keyword Value="SampledProfile"/>
+        <Keyword Value="CSwitch"/>
+        <Keyword Value="ReadyThread"/>
+        <Keyword Value="DPC"/>
+        <Keyword Value="Interrupt"/>
+        <Keyword Value="HardFaults"/>
+        <Keyword Value="VirtualAllocation"/>
+        <Keyword Value="DiskIO"/>
+        <Keyword Value="FileIO"/>
+        <Keyword Value="NetworkTrace"/>
+      </Keywords>
+      <Stacks>
+        <Stack Value="SampledProfile"/>
+        <Stack Value="CSwitch"/>
+        <Stack Value="ReadyThread"/>
+        <Stack Value="VirtualAllocation"/>
+      </Stacks>
+    </SystemProvider>
+
+    <EventProvider Id="EP_DxgKrnl" Name="Microsoft-Windows-DxgKrnl" Stack="true">
+        <Keywords><Keyword Value="0xFFFFFF"/></Keywords>
+    </EventProvider>
+    <EventProvider Id="EP_DwmCore" Name="Microsoft-Windows-Dwm-Core" Stack="true"/>
+    <EventProvider Id="EP_Win32k" Name="Microsoft-Windows-Win32k" Stack="true">
+         <Keywords><Keyword Value="0xFFFFFF"/></Keywords>
+    </EventProvider>
+    <EventProvider Id="EP_MCDM" Name="Microsoft-Windows-MCDM-Driver" Stack="true"/>
+    <EventProvider Id="EP_DirectML" Name="Microsoft-Windows-DirectML" Stack="true"/>
+    <EventProvider Id="EP_KernelPower" Name="Microsoft-Windows-Kernel-Power" Stack="true"/>
+
+    <Profile Id="Measure.Verbose.File" Name="Measure" DetailLevel="Verbose" LoggingMode="File" Description="Final Trace">
+      <Collectors>
+        <SystemCollectorId Value="SC_Mega">
+          <SystemProviderId Value="SP_Kernel_All"/>
+        </SystemCollectorId>
+        <EventCollectorId Value="EC_Mega">
+          <EventProviders>
+            <EventProviderId Value="EP_DxgKrnl"/>
+            <EventProviderId Value="EP_DwmCore"/>
+            <EventProviderId Value="EP_Win32k"/>
+            <EventProviderId Value="EP_MCDM"/>
+            <EventProviderId Value="EP_DirectML"/>
+            <EventProviderId Value="EP_KernelPower"/>
+          </EventProviders>
+        </EventCollectorId>
+      </Collectors>
+    </Profile>
+  </Profiles>
+</WindowsPerformanceRecorder>
