@@ -1,3 +1,25 @@
+# Windows 11 25H2 ETW Game Performance Analysis
+
+## Environment
+- Windows 11 25H2 (KB5074109)
+- NVIDIA RTX 3060
+- WPR + WPA
+
+## Captured Metrics
+- CPU Scheduling
+- CSwitch / ReadyThread
+- HardFaults
+- Disk IO
+- DxgKrnl GPU Activity
+
+## Tested Titles
+- Zenless Zone Zero
+- Wuthering Waves
+- Twinkle Star Knights
+
+
+
+
 # Windows 11 25H2 Performance Trace (ETW/WPR)
 
 ## Overview
