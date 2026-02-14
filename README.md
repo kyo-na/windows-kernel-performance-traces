@@ -125,5 +125,6 @@ ETLファイルにはプロセス名・システムイベントが含まれま�
 - https://note.com/kyona_blog/n/na204782d6b13
 - https://note.com/kyona_blog/n/n0c76ab7bc9c6
 - https://note.com/kyona_blog/n/na325f7ef9448
+- https://note.com/kyona_blog/n/ndf1050324515
 
 
